@@ -12,13 +12,13 @@ using Library.PNI.Controladora;
 
 namespace Library.PNI
 {
-    public partial class frmEmprestimo1 : Form
+    public partial class frmEmprestimo : Form
     {
         private ControladoraEmprestimo _Controle = new ControladoraEmprestimo();
         private bool Alterar = false;
         private TbEmprestimo oEmprestimo1Alterado = null;
 
-        public frmEmprestimo1()
+        public frmEmprestimo()
         {
             InitializeComponent();
         }

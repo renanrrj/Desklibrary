@@ -1,6 +1,6 @@
 ﻿namespace Library.PNI
 {
-    partial class frmEmprestimo1
+    partial class frmEmprestimo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,12 @@
         {
             this.btnSalvar = new System.Windows.Forms.Button();
             this.grdEmp1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAlterar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pboxCapa = new System.Windows.Forms.PictureBox();
             this.lblDevolucao = new System.Windows.Forms.Label();
             this.lblEmprestimo = new System.Windows.Forms.Label();
@@ -39,12 +45,6 @@
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.dtpEmprestimo = new System.Windows.Forms.DateTimePicker();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAlterar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmp1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,40 @@
             this.grdEmp1.Size = new System.Drawing.Size(800, 199);
             this.grdEmp1.TabIndex = 21;
             this.grdEmp1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEmp1_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Livro";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Cliente";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "dataemprestimo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Emprestimo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "datadevolucao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Devolucao";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.HeaderText = "Alterar";
+            this.btnAlterar.Name = "btnAlterar";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.HeaderText = "Excluir";
+            this.btnExcluir.Name = "btnExcluir";
             // 
             // pboxCapa
             // 
@@ -151,41 +185,7 @@
             this.dtpEmprestimo.Size = new System.Drawing.Size(205, 23);
             this.dtpEmprestimo.TabIndex = 12;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Livro";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Cliente";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "dataemprestimo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Emprestimo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "datadevolucao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Devolucao";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.HeaderText = "Alterar";
-            this.btnAlterar.Name = "btnAlterar";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.HeaderText = "Excluir";
-            this.btnExcluir.Name = "btnExcluir";
-            // 
-            // frmEmprestimo1
+            // frmEmprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,7 +201,7 @@
             this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.dtpEmprestimo);
-            this.Name = "frmEmprestimo1";
+            this.Name = "frmEmprestimo";
             this.Text = "Emprestimo";
             this.Activated += new System.EventHandler(this.frmEmprestimo1_Activated);
             this.Load += new System.EventHandler(this.frmEmprestimo1_Load);

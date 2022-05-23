@@ -36,11 +36,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.grdCli = new System.Windows.Forms.DataGridView();
-            this.pboxCapa = new System.Windows.Forms.PictureBox();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.lblCidade = new System.Windows.Forms.Label();
-            this.lblBairro = new System.Windows.Forms.Label();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +43,13 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlterar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pboxCapa = new System.Windows.Forms.PictureBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.lblCidade = new System.Windows.Forms.Label();
+            this.lblBairro = new System.Windows.Forms.Label();
+            this.btnCarregar = new System.Windows.Forms.Button();
+            this.ofdCliente = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +131,46 @@
             this.grdCli.TabIndex = 18;
             this.grdCli.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCli_CellClick);
             // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            // 
+            // Cpf
+            // 
+            this.Cpf.DataPropertyName = "CPF";
+            this.Cpf.HeaderText = "Cpf";
+            this.Cpf.Name = "Cpf";
+            // 
+            // Endereço
+            // 
+            this.Endereço.DataPropertyName = "endereco";
+            this.Endereço.HeaderText = "Endereco";
+            this.Endereço.Name = "Endereço";
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // Bairro
+            // 
+            this.Bairro.DataPropertyName = "bairro";
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.HeaderText = "Alterar";
+            this.btnAlterar.Name = "btnAlterar";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.HeaderText = "Excluir";
+            this.btnExcluir.Name = "btnExcluir";
+            // 
             // pboxCapa
             // 
             this.pboxCapa.Image = global::Library.PNI.Properties.Resources.jpg__Logo_;
@@ -171,51 +213,26 @@
             this.lblBairro.TabIndex = 17;
             this.lblBairro.Text = "Bairro:";
             // 
-            // nome
+            // btnCarregar
             // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
+            this.btnCarregar.Location = new System.Drawing.Point(341, 203);
+            this.btnCarregar.Name = "btnCarregar";
+            this.btnCarregar.Size = new System.Drawing.Size(75, 23);
+            this.btnCarregar.TabIndex = 20;
+            this.btnCarregar.Text = "Carregar";
+            this.btnCarregar.UseVisualStyleBackColor = true;
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
-            // Cpf
+            // ofdCliente
             // 
-            this.Cpf.DataPropertyName = "CPF";
-            this.Cpf.HeaderText = "Cpf";
-            this.Cpf.Name = "Cpf";
-            // 
-            // Endereço
-            // 
-            this.Endereço.DataPropertyName = "endereco";
-            this.Endereço.HeaderText = "Endereco";
-            this.Endereço.Name = "Endereço";
-            // 
-            // Cidade
-            // 
-            this.Cidade.DataPropertyName = "cidade";
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
-            // 
-            // Bairro
-            // 
-            this.Bairro.DataPropertyName = "bairro";
-            this.Bairro.HeaderText = "Bairro";
-            this.Bairro.Name = "Bairro";
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.HeaderText = "Alterar";
-            this.btnAlterar.Name = "btnAlterar";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.HeaderText = "Excluir";
-            this.btnExcluir.Name = "btnExcluir";
+            this.ofdCliente.FileName = "openFileDialog1";
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 450);
+            this.Controls.Add(this.btnCarregar);
             this.Controls.Add(this.pboxCapa);
             this.Controls.Add(this.grdCli);
             this.Controls.Add(this.btnSalvar);
@@ -262,5 +279,7 @@
         private DataGridViewTextBoxColumn Bairro;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
+        private Button btnCarregar;
+        private OpenFileDialog ofdCliente;
     }
 }

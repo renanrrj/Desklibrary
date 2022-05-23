@@ -29,7 +29,7 @@ namespace Library.PNI
 
         private void mnuEmprestimo_Click(object sender, EventArgs e)
         {
-            frmEmprestimo1 oFrm = new frmEmprestimo1(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
+            frmEmprestimo oFrm = new frmEmprestimo(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
             oFrm.MdiParent = this;
             oFrm.Show();
         }

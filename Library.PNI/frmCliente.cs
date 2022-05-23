@@ -14,6 +14,8 @@ namespace Library.PNI
 {
     public partial class frmCliente : Form
     {
+        Bitmap bmp;
+
         private ControladoraTbCliente _Controle = new ControladoraTbCliente();
         private bool Alterar = false;
         private TbCliente oClienteAlterado = null;
@@ -144,6 +146,16 @@ namespace Library.PNI
                 }
             }
 
+        }
+
+        private void btnCarregar_Click(object sender, EventArgs e)
+        {
+            if (ofdCliente.ShowDialog() == DialogResult.OK)
+            {
+                string imgnome = ofdCliente.FileName;
+                bmp = new Bitmap(imgnome);
+                pboxCapa.Image = bmp;
+            }
         }
     }
 }
