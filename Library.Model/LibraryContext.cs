@@ -18,36 +18,23 @@ namespace Library.Model
         {
         }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<Emprestimo> Emprestimo { get; set; }
-        public virtual DbSet<Emprestimo1> Emprestimo1 { get; set; }
-        public virtual DbSet<Livro> Livro { get; set; }
+        public virtual DbSet<TbCliente> TbCliente { get; set; }
+        public virtual DbSet<TbEmprestimo> TbEmprestimo { get; set; }
+        public virtual DbSet<TbLivro> TbLivro { get; set; }
+        public virtual DbSet<TbMapa> TbMapa { get; set; }
+        public virtual DbSet<TbPesquisa> TbPesquisa { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-JDE8Q70\\SQLEXPRESS;Initial Catalog=LibraryBD;User ID=sa;Password=sa123");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=PARNAITATIAIA01\\SQLEXPRESS;Initial Catalog=LibraryDB3p;User ID=sa;Password=sa123");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Emprestimo>(entity =>
-            {
-                entity.HasOne(d => d.IdClienteNavigation)
-                    .WithMany(p => p.Emprestimo)
-                    .HasForeignKey(d => d.IdCliente)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Emprestimo_Cliente");
-
-                entity.HasOne(d => d.IdLivroNavigation)
-                    .WithMany(p => p.Emprestimo)
-                    .HasForeignKey(d => d.IdLivro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Emprestimo_Livro");
-            });
-
             OnModelCreatingPartial(modelBuilder);
         }
 

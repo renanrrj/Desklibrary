@@ -10,11 +10,11 @@ namespace Library.PNI.Controladora
 {
     public class ControladoraCliente : IDisposable
     {
-        RepositorioCliente _Repositorio;
+        RepositorioCliente1 _Repositorio;
 
         public ControladoraCliente()
         {
-            _Repositorio = new RepositorioCliente();
+            _Repositorio = new RepositorioCliente1();
         }
         public void Incluir(Cliente oCliente)
         {

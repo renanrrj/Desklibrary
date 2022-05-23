@@ -8,20 +8,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Library.Model
 {
-    public partial class Emprestimo1
+    [Table("tb_Livro")]
+    public partial class TbLivro
     {
         [Key]
-        [Column("id")]
         public int Id { get; set; }
-        [StringLength(30)]
+        [Required]
+        [StringLength(14)]
         [Unicode(false)]
-        public string Livro { get; set; }
+        public string Titulo { get; set; }
+        [Required]
         [StringLength(100)]
         [Unicode(false)]
-        public string Cliente { get; set; }
-        [Column("dataemprestimo", TypeName = "datetime")]
-        public DateTime? Dataemprestimo { get; set; }
-        [Column("datadevolucao", TypeName = "datetime")]
-        public DateTime? Datadevolucao { get; set; }
+        public string Autor { get; set; }
+        [Required]
+        [StringLength(50)]
+        [Unicode(false)]
+        public string Editora { get; set; }
+        public bool Emprestimo { get; set; }
+        [Unicode(false)]
+        public string Imagem { get; set; }
     }
 }
