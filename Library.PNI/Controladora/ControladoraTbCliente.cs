@@ -8,30 +8,30 @@ using Library.Model.Repositorios;
 
 namespace Library.PNI.Controladora
 {
-    public class ControladoraCliente : IDisposable
+    public class ControladoraTbCliente : IDisposable
     {
-        RepositorioCliente1 _Repositorio;
+        RepositorioTbCliente _Repositorio;
 
-        public ControladoraCliente()
+        public ControladoraTbCliente()
         {
-            _Repositorio = new RepositorioCliente1();
+            _Repositorio = new RepositorioTbCliente();
         }
-        public void Incluir(Cliente oCliente)
+        public void Incluir(TbCliente oCliente)
         {
             _Repositorio.Incluir(oCliente);
         }
 
-        public void Alterar(Cliente oCliente)
+        public void Alterar(TbCliente oCliente)
         {
             _Repositorio.Alterar(oCliente);
         }
 
-        public void Excluir(Cliente oCliente)
+        public void Excluir(TbCliente oCliente)
         {
             _Repositorio.Excluir(oCliente);
         }
 
-        public List<Cliente> SelecionarTodos()
+        public List<TbCliente> SelecionarTodos()
         {
             return _Repositorio.SelecionarTodos();
         }

@@ -14,9 +14,9 @@ namespace Library.PNI
 {
     public partial class frmLivro : Form
     {
-        private ControladoraLivro _Controle = new ControladoraLivro();
+        private ControladoraTbLivro _Controle = new ControladoraTbLivro();
         private bool Alterar = false;
-        private Livro oLivroAlterado = null;
+        private TbLivro oLivroAlterado = null;
 
         public frmLivro()
         {
@@ -62,16 +62,16 @@ namespace Library.PNI
             {
                 if (Alterar == false)
                 {
-                    Livro oLivro = new Livro(); // instancia                    
+                    TbLivro oLivro = new TbLivro(); // instancia                    
 
-                    oLivro.Nome = txtTitulo.Text;
+                    oLivro.Titulo = txtTitulo.Text;
                     oLivro.Autor = txtAutor.Text;
                     oLivro.Editora = txtEditora.Text;
                     _Controle.Incluir(oLivro);
                 }
                 else
                 {//Alteração
-                    oLivroAlterado.Nome = txtTitulo.Text;
+                    oLivroAlterado.Titulo = txtTitulo.Text;
                     oLivroAlterado.Autor = txtAutor.Text;
                     oLivroAlterado.Editora = txtEditora.Text;
                     _Controle.Alterar(oLivroAlterado);
@@ -106,9 +106,9 @@ namespace Library.PNI
             {
                 if(grdLib.Columns[e.ColumnIndex].Name== "btnAlterar")
                 {
-                    oLivroAlterado = (Livro)grdLib.Rows[e.RowIndex].DataBoundItem;
+                    oLivroAlterado = (TbLivro)grdLib.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
-                    txtTitulo.Text = oLivroAlterado.Nome;
+                    txtTitulo.Text = oLivroAlterado.Titulo;
                     txtAutor.Text = oLivroAlterado.Autor;
                     txtEditora.Text = oLivroAlterado.Editora;
                 }
@@ -116,7 +116,7 @@ namespace Library.PNI
                 {
                     if (MessageBox.Show("Confirme a excluisão, para continuar", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Livro oLivro = (Livro)grdLib.Rows[e.RowIndex].DataBoundItem;
+                        TbLivro oLivro = (TbLivro)grdLib.Rows[e.RowIndex].DataBoundItem;
                         _Controle.Excluir(oLivro);
                         LimpaControles();
                         CarregaGrid();

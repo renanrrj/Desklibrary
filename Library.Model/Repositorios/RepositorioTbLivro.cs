@@ -10,17 +10,17 @@ using Library.Model;
 
 namespace Library.Model.Repositorios
 {
-    public class RepositorioTbTbLivro : IDisposable  //libera da memoria para uso
+    public class RepositorioTbLivro : IDisposable  //libera da memoria para uso
     {
         private bool RecebeuContexto = false;
         private LibraryContext db;
 
-        public RepositorioTbTbLivro() // Construtor 1 cria contexto na memoria
+        public RepositorioTbLivro() // Construtor 1 cria contexto na memoria
         {
             db = new LibraryContext();
         }
 
-        public RepositorioTbTbLivro(LibraryContext _db) // Construtor 2 recebe o contexto de outro lugar
+        public RepositorioTbLivro(LibraryContext _db) // Construtor 2 recebe o contexto de outro lugar
         {
             db = _db;
             RecebeuContexto = true;

@@ -14,9 +14,9 @@ namespace Library.PNI
 {
     public partial class frmEmprestimo1 : Form
     {
-        private ControladoraEmprestimo1 _Controle = new ControladoraEmprestimo1();
+        private ControladoraEmprestimo _Controle = new ControladoraEmprestimo();
         private bool Alterar = false;
-        private Emprestimo1 oEmprestimo1Alterado = null;
+        private TbEmprestimo oEmprestimo1Alterado = null;
 
         public frmEmprestimo1()
         {
@@ -56,20 +56,20 @@ namespace Library.PNI
             {
                 if (Alterar == false)
                 {
-                    Emprestimo1 oEmprestimo1 = new Emprestimo1(); // instancia                   
+                    TbEmprestimo oEmprestimo1 = new TbEmprestimo(); // instancia                   
 
-                    oEmprestimo1.Livro = txtIdLivro.Text;
+                    oEmprestimo1.Objeto = txtIdLivro.Text;
                     oEmprestimo1.Cliente = txtIdCliente.Text;
-                    oEmprestimo1.Dataemprestimo = dtpEmprestimo.Value;
-                    oEmprestimo1.Datadevolucao = dtpDevolucao.Value;
+                    oEmprestimo1.DataEmprestimo = dtpEmprestimo.Value;
+                    oEmprestimo1.DataDevolucao = dtpDevolucao.Value;
                     _Controle.Incluir(oEmprestimo1);
                 }
                 else
                 {//Alteração
-                    oEmprestimo1Alterado.Livro = txtIdLivro.Text;
+                    oEmprestimo1Alterado.Objeto = txtIdLivro.Text;
                     oEmprestimo1Alterado.Cliente = txtIdCliente.Text;
-                    oEmprestimo1Alterado.Dataemprestimo = dtpEmprestimo.Value;
-                    oEmprestimo1Alterado.Datadevolucao = dtpDevolucao.Value;
+                    oEmprestimo1Alterado.DataEmprestimo = dtpEmprestimo.Value;
+                    oEmprestimo1Alterado.DataDevolucao = dtpDevolucao.Value;
                     _Controle.Alterar(oEmprestimo1Alterado);
                 }
                 LimpaControles();
@@ -97,9 +97,9 @@ namespace Library.PNI
             {
                 if (grdEmp1.Columns[e.ColumnIndex].Name == "btnAlterar")
                 {
-                    oEmprestimo1Alterado = (Emprestimo1)grdEmp1.Rows[e.RowIndex].DataBoundItem;
+                    oEmprestimo1Alterado = (TbEmprestimo)grdEmp1.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
-                    txtIdLivro.Text = oEmprestimo1Alterado.Livro;
+                    txtIdLivro.Text = oEmprestimo1Alterado.Objeto;
                     txtIdCliente.Text = oEmprestimo1Alterado.Cliente;
                     
                 }
@@ -107,8 +107,8 @@ namespace Library.PNI
                 {
                     if (MessageBox.Show("Confirme a excluisão, para continuar", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Emprestimo1 oEmprestimo1 = (Emprestimo1)grdEmp1.Rows[e.RowIndex].DataBoundItem;
-                        _Controle.Excluir(oEmprestimo1);
+                        TbEmprestimo oEmprestimo = (TbEmprestimo)grdEmp1.Rows[e.RowIndex].DataBoundItem;
+                        _Controle.Excluir(oEmprestimo);
                         LimpaControles();
                         CarregaGrid();
                         txtIdLivro.Focus();

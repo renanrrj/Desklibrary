@@ -14,9 +14,9 @@ namespace Library.PNI
 {
     public partial class frmCliente : Form
     {
-        private ControladoraCliente _Controle = new ControladoraCliente();
+        private ControladoraTbCliente _Controle = new ControladoraTbCliente();
         private bool Alterar = false;
-        private Cliente oClienteAlterado = null;
+        private TbCliente oClienteAlterado = null;
 
         public frmCliente()
         {
@@ -72,7 +72,7 @@ namespace Library.PNI
             {
                 if (Alterar == false)
                 {
-                    Cliente oCliente = new Cliente(); // instancia                    
+                    TbCliente oCliente = new TbCliente(); // instancia                    
 
                     oCliente.Nome = txtNome.Text;
                     oCliente.Cpf = txtCpf.Text;
@@ -122,7 +122,7 @@ namespace Library.PNI
             {
                 if (grdCli.Columns[e.ColumnIndex].Name == "btnAlterar")
                 {
-                    oClienteAlterado = (Cliente)grdCli.Rows[e.RowIndex].DataBoundItem;
+                    oClienteAlterado = (TbCliente)grdCli.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
                     txtNome.Text = oClienteAlterado.Nome;
                     txtCpf.Text = oClienteAlterado.Cpf;
@@ -134,7 +134,7 @@ namespace Library.PNI
                 {
                     if (MessageBox.Show("Confirme a excluisão, para continuar", ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Cliente oCliente = (Cliente)grdCli.Rows[e.RowIndex].DataBoundItem;
+                        TbCliente oCliente = (TbCliente)grdCli.Rows[e.RowIndex].DataBoundItem;
                         _Controle.Excluir(oCliente);
                         LimpaControles();
                         CarregaGrid();
