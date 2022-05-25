@@ -1,8 +1,0 @@
-1 - Abrir sql
-2- Conectar
-    Usuária: sa
-    Senha: sa123
-3- Solicitar nova consulta.
-4- Colar conteúdo do .txt LibraryBd
-5- Atualizar o branco.
-6- Pronto!
