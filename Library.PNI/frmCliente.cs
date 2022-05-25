@@ -81,6 +81,7 @@ namespace Library.PNI
                     oCliente.Endereco = txtEndereco.Text;
                     oCliente.Cidade = txtCidade.Text;
                     oCliente.Bairro = txtBairro.Text;
+                    //oCliente.Imagem = pboxCapa.Image;
                     _Controle.Incluir(oCliente);
                 }
                 else
@@ -150,8 +151,11 @@ namespace Library.PNI
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {
+            ofdCliente.Title = "Selecionar foto";
+            ofdCliente.Filter = "PNG| *.png|JPG *.jpg| BMP *.bmp";
+
             if (ofdCliente.ShowDialog() == DialogResult.OK)
-            {
+            {                
                 string imgnome = ofdCliente.FileName;
                 bmp = new Bitmap(imgnome);
                 pboxCapa.Image = bmp;

@@ -56,10 +56,10 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(129, 190);
+            this.btnSalvar.Location = new System.Drawing.Point(194, 188);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -69,21 +69,21 @@
             this.txtEndereco.Location = new System.Drawing.Point(89, 86);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(200, 23);
-            this.txtEndereco.TabIndex = 11;
+            this.txtEndereco.TabIndex = 2;
             // 
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(89, 57);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(200, 23);
-            this.txtCpf.TabIndex = 10;
+            this.txtCpf.TabIndex = 1;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(89, 27);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(200, 23);
-            this.txtNome.TabIndex = 9;
+            this.txtNome.TabIndex = 0;
             // 
             // lblEndereco
             // 
@@ -133,31 +133,31 @@
             // 
             // nome
             // 
-            this.nome.DataPropertyName = "nome";
+            this.nome.DataPropertyName = "Nome";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
             // 
             // Cpf
             // 
-            this.Cpf.DataPropertyName = "CPF";
-            this.Cpf.HeaderText = "Cpf";
+            this.Cpf.DataPropertyName = "Cpf";
+            this.Cpf.HeaderText = "CPF";
             this.Cpf.Name = "Cpf";
             // 
             // Endereço
             // 
-            this.Endereço.DataPropertyName = "endereco";
-            this.Endereço.HeaderText = "Endereco";
+            this.Endereço.DataPropertyName = "Endereco";
+            this.Endereço.HeaderText = "Endereço";
             this.Endereço.Name = "Endereço";
             // 
             // Cidade
             // 
-            this.Cidade.DataPropertyName = "cidade";
+            this.Cidade.DataPropertyName = "Cidade";
             this.Cidade.HeaderText = "Cidade";
             this.Cidade.Name = "Cidade";
             // 
             // Bairro
             // 
-            this.Bairro.DataPropertyName = "bairro";
+            this.Bairro.DataPropertyName = "Bairro";
             this.Bairro.HeaderText = "Bairro";
             this.Bairro.Name = "Bairro";
             // 
@@ -177,7 +177,7 @@
             this.pboxCapa.Location = new System.Drawing.Point(453, 27);
             this.pboxCapa.Name = "pboxCapa";
             this.pboxCapa.Size = new System.Drawing.Size(156, 201);
-            this.pboxCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxCapa.TabIndex = 19;
             this.pboxCapa.TabStop = false;
             // 
@@ -186,14 +186,14 @@
             this.txtCidade.Location = new System.Drawing.Point(89, 117);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(200, 23);
-            this.txtCidade.TabIndex = 9;
+            this.txtCidade.TabIndex = 3;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(89, 147);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(200, 23);
-            this.txtBairro.TabIndex = 10;
+            this.txtBairro.TabIndex = 4;
             // 
             // lblCidade
             // 
@@ -215,10 +215,10 @@
             // 
             // btnCarregar
             // 
-            this.btnCarregar.Location = new System.Drawing.Point(341, 203);
+            this.btnCarregar.Location = new System.Drawing.Point(98, 188);
             this.btnCarregar.Name = "btnCarregar";
             this.btnCarregar.Size = new System.Drawing.Size(75, 23);
-            this.btnCarregar.TabIndex = 20;
+            this.btnCarregar.TabIndex = 5;
             this.btnCarregar.Text = "Carregar";
             this.btnCarregar.UseVisualStyleBackColor = true;
             this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
@@ -272,6 +272,8 @@
         private TextBox txtBairro;
         private Label lblCidade;
         private Label lblBairro;
+        private Button btnCarregar;
+        private OpenFileDialog ofdCliente;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn Cpf;
         private DataGridViewTextBoxColumn Endereço;
@@ -279,7 +281,5 @@
         private DataGridViewTextBoxColumn Bairro;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
-        private Button btnCarregar;
-        private OpenFileDialog ofdCliente;
     }
 }
