@@ -33,10 +33,10 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empréstimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stbPrincipal = new System.Windows.Forms.ToolStrip();
-            this.stbPrin = new System.Windows.Forms.ToolStripLabel();
             this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stbPrincipal = new System.Windows.Forms.ToolStrip();
+            this.stbPrin = new System.Windows.Forms.ToolStripLabel();
             this.mnuPrincipal.SuspendLayout();
             this.stbPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -46,9 +46,9 @@
             this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.livrosToolStripMenuItem,
-            this.empréstimoToolStripMenuItem,
             this.pesquisaToolStripMenuItem,
-            this.mapasToolStripMenuItem});
+            this.mapasToolStripMenuItem,
+            this.empréstimoToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(800, 24);
@@ -79,6 +79,20 @@
             this.empréstimoToolStripMenuItem.Text = "Empréstimo";
             this.empréstimoToolStripMenuItem.Click += new System.EventHandler(this.empréstimoToolStripMenuItem_Click);
             // 
+            // pesquisaToolStripMenuItem
+            // 
+            this.pesquisaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisaToolStripMenuItem.Image")));
+            this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
+            this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.pesquisaToolStripMenuItem.Text = "Pesquisas";
+            // 
+            // mapasToolStripMenuItem
+            // 
+            this.mapasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapasToolStripMenuItem.Image")));
+            this.mapasToolStripMenuItem.Name = "mapasToolStripMenuItem";
+            this.mapasToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.mapasToolStripMenuItem.Text = "Mapas";
+            // 
             // stbPrincipal
             // 
             this.stbPrincipal.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -96,20 +110,6 @@
             this.stbPrin.Name = "stbPrin";
             this.stbPrin.Size = new System.Drawing.Size(53, 22);
             this.stbPrin.Text = "Principal";
-            // 
-            // pesquisaToolStripMenuItem
-            // 
-            this.pesquisaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisaToolStripMenuItem.Image")));
-            this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
-            this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.pesquisaToolStripMenuItem.Text = "Pesquisas";
-            // 
-            // mapasToolStripMenuItem
-            // 
-            this.mapasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapasToolStripMenuItem.Image")));
-            this.mapasToolStripMenuItem.Name = "mapasToolStripMenuItem";
-            this.mapasToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.mapasToolStripMenuItem.Text = "Mapas";
             // 
             // frmPrincipal
             // 
