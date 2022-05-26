@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -43,26 +46,35 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlterar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pboxCapa = new System.Windows.Forms.PictureBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.btnCarregar = new System.Windows.Forms.Button();
             this.ofdCliente = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(194, 188);
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.ImageIndex = 0;
+            this.btnSalvar.ImageList = this.imageList1;
+            this.btnSalvar.Location = new System.Drawing.Point(161, 176);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(36, 36);
             this.btnSalvar.TabIndex = 6;
-            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "salve-.png");
             // 
             // txtEndereco
             // 
@@ -88,7 +100,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(29, 91);
+            this.lblEndereco.Location = new System.Drawing.Point(11, 91);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(59, 15);
             this.lblEndereco.TabIndex = 17;
@@ -97,7 +109,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(36, 32);
+            this.lblNome.Location = new System.Drawing.Point(27, 32);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 15);
             this.lblNome.TabIndex = 15;
@@ -106,7 +118,7 @@
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(36, 62);
+            this.lblCpf.Location = new System.Drawing.Point(39, 62);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(31, 15);
             this.lblCpf.TabIndex = 16;
@@ -171,16 +183,6 @@
             this.btnExcluir.HeaderText = "Excluir";
             this.btnExcluir.Name = "btnExcluir";
             // 
-            // pboxCapa
-            // 
-            this.pboxCapa.Image = global::Library.PNI.Properties.Resources.jpg__Logo_;
-            this.pboxCapa.Location = new System.Drawing.Point(453, 27);
-            this.pboxCapa.Name = "pboxCapa";
-            this.pboxCapa.Size = new System.Drawing.Size(156, 201);
-            this.pboxCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxCapa.TabIndex = 19;
-            this.pboxCapa.TabStop = false;
-            // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(89, 117);
@@ -198,7 +200,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(36, 126);
+            this.lblCidade.Location = new System.Drawing.Point(23, 126);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(47, 15);
             this.lblCidade.TabIndex = 16;
@@ -213,16 +215,6 @@
             this.lblBairro.TabIndex = 17;
             this.lblBairro.Text = "Bairro:";
             // 
-            // btnCarregar
-            // 
-            this.btnCarregar.Location = new System.Drawing.Point(98, 188);
-            this.btnCarregar.Name = "btnCarregar";
-            this.btnCarregar.Size = new System.Drawing.Size(75, 23);
-            this.btnCarregar.TabIndex = 5;
-            this.btnCarregar.Text = "Carregar";
-            this.btnCarregar.UseVisualStyleBackColor = true;
-            //this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
-            // 
             // ofdCliente
             // 
             this.ofdCliente.FileName = "openFileDialog1";
@@ -232,8 +224,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 450);
-            this.Controls.Add(this.btnCarregar);
-            this.Controls.Add(this.pboxCapa);
             this.Controls.Add(this.grdCli);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtBairro);
@@ -246,12 +236,13 @@
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCpf);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "frmCliente";
             this.Text = "Cadastro de Clientes";
             this.Activated += new System.EventHandler(this.frmCliente_Activated);
             this.Load += new System.EventHandler(this.frmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,13 +257,11 @@
         private Label lblNome;
         private Label lblCpf;
         private DataGridView grdCli;
-        private PictureBox pboxCapa;
         private DataGridViewTextBoxColumn Endereco;
         private TextBox txtCidade;
         private TextBox txtBairro;
         private Label lblCidade;
         private Label lblBairro;
-        private Button btnCarregar;
         private OpenFileDialog ofdCliente;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn Cpf;
@@ -281,5 +270,6 @@
         private DataGridViewTextBoxColumn Bairro;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
+        private ImageList imageList1;
     }
 }

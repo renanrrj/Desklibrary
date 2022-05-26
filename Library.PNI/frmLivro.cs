@@ -12,8 +12,11 @@ using Library.PNI.Controladora;
 
 namespace Library.PNI
 {
+    
     public partial class frmLivro : Form
     {
+
+        Bitmap bmp;
         private ControladoraTbLivro _Controle = new ControladoraTbLivro();
         private bool Alterar = false;
         private TbLivro oLivroAlterado = null;
@@ -125,6 +128,21 @@ namespace Library.PNI
 
                 }
             }
+        }
+
+        private void btnCarregarImg_Click(object sender, EventArgs e)
+        {
+            
+                ofdLivro.Title = "Selecionar foto";
+                ofdLivro.Filter = "PNG |*.png| JPG|*.jpg";
+
+                if (ofdLivro.ShowDialog() == DialogResult.OK)
+                {
+                    string imgnome = ofdLivro.FileName;
+                    bmp = new Bitmap(imgnome);
+                    pboxLivro.Image = bmp;
+                }
+         
         }
     }
 }
