@@ -11,6 +11,11 @@ namespace Library.Model
     [Table("tb_Mapa")]
     public partial class TbMapa
     {
+        public TbMapa()
+        {
+            TbRelacional = new HashSet<TbRelacional>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "datetime")]
@@ -21,5 +26,8 @@ namespace Library.Model
         public string Locall { get; set; }
         [Unicode(false)]
         public string Imagem { get; set; }
+
+        [InverseProperty("IdMapaNavigation")]
+        public virtual ICollection<TbRelacional> TbRelacional { get; set; }
     }
 }

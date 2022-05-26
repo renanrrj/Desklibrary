@@ -11,6 +11,11 @@ namespace Library.Model
     [Table("tb_Emprestimo")]
     public partial class TbEmprestimo
     {
+        public TbEmprestimo()
+        {
+            TbRelacional = new HashSet<TbRelacional>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -27,5 +32,8 @@ namespace Library.Model
         public DateTime DataDevolucao { get; set; }
         [Unicode(false)]
         public string Imagem { get; set; }
+
+        [InverseProperty("IdEmprestimoNavigation")]
+        public virtual ICollection<TbRelacional> TbRelacional { get; set; }
     }
 }

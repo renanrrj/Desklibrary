@@ -23,18 +23,47 @@ namespace Library.Model
         public virtual DbSet<TbLivro> TbLivro { get; set; }
         public virtual DbSet<TbMapa> TbMapa { get; set; }
         public virtual DbSet<TbPesquisa> TbPesquisa { get; set; }
+        public virtual DbSet<TbRelacional> TbRelacional { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=PARNAITATIAIA01\\SQLEXPRESS;Initial Catalog=LibraryDB3p;User ID=sa;Password=sa123");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-JDE8Q70\\SQLEXPRESS;Initial Catalog=LibraryDB3p;User ID=sa;Password=sa123");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TbRelacional>(entity =>
+            {
+                entity.HasOne(d => d.IdClienteNavigation)
+                    .WithMany(p => p.TbRelacional)
+                    .HasForeignKey(d => d.IdCliente)
+                    .HasConstraintName("FK_tb_Relacional_tb_Cliente");
+
+                entity.HasOne(d => d.IdEmprestimoNavigation)
+                    .WithMany(p => p.TbRelacional)
+                    .HasForeignKey(d => d.IdEmprestimo)
+                    .HasConstraintName("FK_tb_Relacional_tb_Emprestimo");
+
+                entity.HasOne(d => d.IdLivroNavigation)
+                    .WithMany(p => p.TbRelacional)
+                    .HasForeignKey(d => d.IdLivro)
+                    .HasConstraintName("FK_tb_Relacional_tb_Livro");
+
+                entity.HasOne(d => d.IdMapaNavigation)
+                    .WithMany(p => p.TbRelacional)
+                    .HasForeignKey(d => d.IdMapa)
+                    .HasConstraintName("FK_tb_Relacional_tb_Mapa");
+
+                entity.HasOne(d => d.IdPesquisaNavigation)
+                    .WithMany(p => p.TbRelacional)
+                    .HasForeignKey(d => d.IdPesquisa)
+                    .HasConstraintName("FK_tb_Relacional_tb_Pesquisa");
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 

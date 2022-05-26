@@ -20,14 +20,37 @@ namespace Library.PNI
             Application.Exit(); // fecha todos os processos.
         }
 
-        private void mnuClienteCad_Click(object sender, EventArgs e)
+        //private void mnuClienteCad_Click(object sender, EventArgs e)
+        //{
+        //    frmCliente oFrm = new frmCliente(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
+        //    oFrm.MdiParent = this;
+        //    oFrm.Show();
+        //}
+
+        private void mnuEmprestimo_Click(object sender, EventArgs e)
         {
-            frmCliente oFrm = new frmCliente(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
+            frmEmprestimo oFrm = new frmEmprestimo(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
             oFrm.MdiParent = this;
             oFrm.Show();
         }
 
-        private void mnuEmprestimo_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                frmCliente oFrm = new frmCliente(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
+                oFrm.MdiParent = this;
+                oFrm.Show();
+            
+        }
+
+        private void livrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLivro oFrm = new frmLivro(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
+            oFrm.MdiParent = this;
+            oFrm.Show();
+        }
+
+        private void empréstimoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEmprestimo oFrm = new frmEmprestimo(); // posso usar a msm variavel "oFrm" em todoos os metodos pois é interna
             oFrm.MdiParent = this;

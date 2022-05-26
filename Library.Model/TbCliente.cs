@@ -11,6 +11,11 @@ namespace Library.Model
     [Table("tb_Cliente")]
     public partial class TbCliente
     {
+        public TbCliente()
+        {
+            TbRelacional = new HashSet<TbRelacional>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -33,7 +38,8 @@ namespace Library.Model
         [StringLength(50)]
         [Unicode(false)]
         public string Cidade { get; set; }
-        [Unicode(false)]
-        public string Imagem { get; set; }
+
+        [InverseProperty("IdClienteNavigation")]
+        public virtual ICollection<TbRelacional> TbRelacional { get; set; }
     }
 }

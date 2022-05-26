@@ -221,7 +221,7 @@
             this.btnCarregar.TabIndex = 5;
             this.btnCarregar.Text = "Carregar";
             this.btnCarregar.UseVisualStyleBackColor = true;
-            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
+            //this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
             // ofdCliente
             // 

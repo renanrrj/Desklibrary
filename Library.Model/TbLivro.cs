@@ -11,6 +11,11 @@ namespace Library.Model
     [Table("tb_Livro")]
     public partial class TbLivro
     {
+        public TbLivro()
+        {
+            TbRelacional = new HashSet<TbRelacional>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -28,5 +33,8 @@ namespace Library.Model
         public bool Emprestimo { get; set; }
         [Unicode(false)]
         public string Imagem { get; set; }
+
+        [InverseProperty("IdLivroNavigation")]
+        public virtual ICollection<TbRelacional> TbRelacional { get; set; }
     }
 }

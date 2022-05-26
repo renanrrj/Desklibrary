@@ -11,6 +11,11 @@ namespace Library.Model
     [Table("tb_Pesquisa")]
     public partial class TbPesquisa
     {
+        public TbPesquisa()
+        {
+            TbRelacional = new HashSet<TbRelacional>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -23,5 +28,8 @@ namespace Library.Model
         public string Bioma { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime Dataa { get; set; }
+
+        [InverseProperty("IdPesquisaNavigation")]
+        public virtual ICollection<TbRelacional> TbRelacional { get; set; }
     }
 }

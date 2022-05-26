@@ -32,9 +32,13 @@
       {
          "Name": "[dbo].[tb_Pesquisa]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_Relacional]",
+         "ObjectType": 0
       }
    ],
-   "UiHint": "PARNAITATIAIA01\\SQLEXPRESS.LibraryDB3p",
+   "UiHint": "DESKTOP-JDE8Q70\\SQLEXPRESS.LibraryDB3p",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,

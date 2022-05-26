@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.mnuCadastroPrin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuClienteCad = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLivroCad = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEmprestimo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.livrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empréstimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stbPrincipal = new System.Windows.Forms.ToolStrip();
             this.stbPrin = new System.Windows.Forms.ToolStripLabel();
+            this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.stbPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -43,56 +44,40 @@
             // mnuPrincipal
             // 
             this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCadastroPrin});
+            this.clientesToolStripMenuItem,
+            this.livrosToolStripMenuItem,
+            this.empréstimoToolStripMenuItem,
+            this.pesquisaToolStripMenuItem,
+            this.mapasToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(800, 24);
             this.mnuPrincipal.TabIndex = 1;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
-            // mnuCadastroPrin
+            // clientesToolStripMenuItem
             // 
-            this.mnuCadastroPrin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuClienteCad,
-            this.mnuLivroCad,
-            this.mnuEmprestimo,
-            this.mnuSair});
-            this.mnuCadastroPrin.Name = "mnuCadastroPrin";
-            this.mnuCadastroPrin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.mnuCadastroPrin.Size = new System.Drawing.Size(66, 20);
-            this.mnuCadastroPrin.Text = "&Cadastro";
+            this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
-            // mnuClienteCad
+            // livrosToolStripMenuItem
             // 
-            this.mnuClienteCad.Name = "mnuClienteCad";
-            this.mnuClienteCad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.mnuClienteCad.Size = new System.Drawing.Size(180, 22);
-            this.mnuClienteCad.Text = "&Cliente";
-            this.mnuClienteCad.Click += new System.EventHandler(this.mnuClienteCad_Click);
+            this.livrosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("livrosToolStripMenuItem.Image")));
+            this.livrosToolStripMenuItem.Name = "livrosToolStripMenuItem";
+            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.livrosToolStripMenuItem.Text = "Livros";
+            this.livrosToolStripMenuItem.Click += new System.EventHandler(this.livrosToolStripMenuItem_Click);
             // 
-            // mnuLivroCad
+            // empréstimoToolStripMenuItem
             // 
-            this.mnuLivroCad.Name = "mnuLivroCad";
-            this.mnuLivroCad.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.mnuLivroCad.Size = new System.Drawing.Size(180, 22);
-            this.mnuLivroCad.Text = "&Livros";
-            this.mnuLivroCad.Click += new System.EventHandler(this.mnuLivroCad_Click);
-            // 
-            // mnuEmprestimo
-            // 
-            this.mnuEmprestimo.Name = "mnuEmprestimo";
-            this.mnuEmprestimo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.mnuEmprestimo.Size = new System.Drawing.Size(180, 22);
-            this.mnuEmprestimo.Text = "&Emprestimo";
-            this.mnuEmprestimo.Click += new System.EventHandler(this.mnuEmprestimo_Click);
-            // 
-            // mnuSair
-            // 
-            this.mnuSair.Name = "mnuSair";
-            this.mnuSair.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.mnuSair.Size = new System.Drawing.Size(180, 22);
-            this.mnuSair.Text = "Sai&r";
-            this.mnuSair.Click += new System.EventHandler(this.mnuSair_Click);
+            this.empréstimoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("empréstimoToolStripMenuItem.Image")));
+            this.empréstimoToolStripMenuItem.Name = "empréstimoToolStripMenuItem";
+            this.empréstimoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.empréstimoToolStripMenuItem.Text = "Empréstimo";
+            this.empréstimoToolStripMenuItem.Click += new System.EventHandler(this.empréstimoToolStripMenuItem_Click);
             // 
             // stbPrincipal
             // 
@@ -111,6 +96,20 @@
             this.stbPrin.Name = "stbPrin";
             this.stbPrin.Size = new System.Drawing.Size(53, 22);
             this.stbPrin.Text = "Principal";
+            // 
+            // pesquisaToolStripMenuItem
+            // 
+            this.pesquisaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisaToolStripMenuItem.Image")));
+            this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
+            this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.pesquisaToolStripMenuItem.Text = "Pesquisas";
+            // 
+            // mapasToolStripMenuItem
+            // 
+            this.mapasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mapasToolStripMenuItem.Image")));
+            this.mapasToolStripMenuItem.Name = "mapasToolStripMenuItem";
+            this.mapasToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.mapasToolStripMenuItem.Text = "Mapas";
             // 
             // frmPrincipal
             // 
@@ -136,12 +135,12 @@
         #endregion
 
         private MenuStrip mnuPrincipal;
-        private ToolStripMenuItem mnuCadastroPrin;
-        private ToolStripMenuItem mnuLivroCad;
         public ToolStripLabel stbPrin;
         public ToolStrip stbPrincipal;
-        private ToolStripMenuItem mnuSair;
-        private ToolStripMenuItem mnuClienteCad;
-        private ToolStripMenuItem mnuEmprestimo;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem livrosToolStripMenuItem;
+        private ToolStripMenuItem empréstimoToolStripMenuItem;
+        private ToolStripMenuItem pesquisaToolStripMenuItem;
+        private ToolStripMenuItem mapasToolStripMenuItem;
     }
 }
