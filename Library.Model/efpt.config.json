@@ -38,7 +38,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-JDE8Q70\\SQLEXPRESS.LibraryDB3p",
+   "UiHint": "PARNAITA01\\SQLEXPRESS.LibraryDB3p",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,

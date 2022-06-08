@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ilCliente = new System.Windows.Forms.ImageList(this.components);
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ImageIndex = 0;
-            this.btnSalvar.ImageList = this.imageList1;
+            this.btnSalvar.ImageList = this.ilCliente;
             this.btnSalvar.Location = new System.Drawing.Point(161, 176);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
@@ -69,12 +69,12 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // imageList1
+            // ilCliente
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "salve-.png");
+            this.ilCliente.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ilCliente.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilCliente.ImageStream")));
+            this.ilCliente.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilCliente.Images.SetKeyName(0, "salve-.png");
             // 
             // txtEndereco
             // 
@@ -82,6 +82,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(200, 23);
             this.txtEndereco.TabIndex = 2;
+            this.txtEndereco.TextChanged += new System.EventHandler(this.txtEndereco_TextChanged);
             // 
             // txtCpf
             // 
@@ -89,6 +90,7 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(200, 23);
             this.txtCpf.TabIndex = 1;
+            this.txtCpf.TextChanged += new System.EventHandler(this.txtCpf_TextChanged);
             // 
             // txtNome
             // 
@@ -96,6 +98,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(200, 23);
             this.txtNome.TabIndex = 0;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblEndereco
             // 
@@ -105,6 +108,7 @@
             this.lblEndereco.Size = new System.Drawing.Size(59, 15);
             this.lblEndereco.TabIndex = 17;
             this.lblEndereco.Text = "Endereço:";
+            this.lblEndereco.Click += new System.EventHandler(this.lblEndereco_Click);
             // 
             // lblNome
             // 
@@ -114,6 +118,7 @@
             this.lblNome.Size = new System.Drawing.Size(43, 15);
             this.lblNome.TabIndex = 15;
             this.lblNome.Text = "Nome:";
+            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // lblCpf
             // 
@@ -123,6 +128,7 @@
             this.lblCpf.Size = new System.Drawing.Size(31, 15);
             this.lblCpf.TabIndex = 16;
             this.lblCpf.Text = "CPF:";
+            this.lblCpf.Click += new System.EventHandler(this.lblCpf_Click);
             // 
             // grdCli
             // 
@@ -142,6 +148,7 @@
             this.grdCli.Size = new System.Drawing.Size(751, 199);
             this.grdCli.TabIndex = 18;
             this.grdCli.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCli_CellClick);
+            this.grdCli.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCli_CellContentClick);
             // 
             // nome
             // 
@@ -270,6 +277,6 @@
         private DataGridViewTextBoxColumn Bairro;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
-        private ImageList imageList1;
+        private ImageList ilCliente;
     }
 }

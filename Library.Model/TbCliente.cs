@@ -38,6 +38,7 @@ namespace Library.Model
         [StringLength(50)]
         [Unicode(false)]
         public string Cidade { get; set; }
+        public byte[] Imagem { get; set; }
 
         [InverseProperty("IdClienteNavigation")]
         public virtual ICollection<TbRelacional> TbRelacional { get; set; }
