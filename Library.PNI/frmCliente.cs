@@ -148,40 +148,5 @@ namespace Library.PNI
             }
 
         }
-
-        private void txtEndereco_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCpf_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCpf_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEndereco_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grdCli_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

@@ -44,10 +44,10 @@ namespace Library.PNI
                 txtPesquisa.Focus();
                 return false;
             }
-            else if (txtBioma.Text.Trim() == "")
+            else if (cbBioma.Text.Trim() == "")
             {
                 MessageBox.Show("Preencha o Conteúdo do campo CPF.", Application.ProductName, MessageBoxButtons.OK);
-                txtBioma.Focus();
+                cbBioma.Focus();
                 return false;
             }
             else if (dtpPesquisa.Text.Trim() == "")
@@ -68,7 +68,7 @@ namespace Library.PNI
                     TbPesquisa aPesquisa = new TbPesquisa(); // instancia                    
 
                     aPesquisa.TituloPesquisa = txtPesquisa.Text;
-                    aPesquisa.Bioma = txtBioma.Text;
+                    aPesquisa.Bioma = cbBioma.Text;
                     aPesquisa.Dataa = dtpPesquisa.Value;
                     
                     //aPesquisa.Imagem = pboxCapa.Image;
@@ -77,7 +77,7 @@ namespace Library.PNI
                 else
                 {//Alteração
                     aPesquisaAlterada.TituloPesquisa = txtPesquisa.Text;
-                    aPesquisaAlterada.Bioma = txtBioma.Text;
+                    aPesquisaAlterada.Bioma = cbBioma.Text;
                     aPesquisaAlterada.Dataa = dtpPesquisa.Value;                    
                     _Controle.Alterar(aPesquisaAlterada);
                 }
@@ -96,7 +96,7 @@ namespace Library.PNI
         private void LimpaControles()
         {
             txtPesquisa.Text = "";
-            txtBioma.Text = "";
+            cbBioma.Text = "";
             //dtpPesquisa.Value = "";            
             aPesquisaAlterada = null;
             Alterar = false;
@@ -116,7 +116,7 @@ namespace Library.PNI
                     aPesquisaAlterada = (TbPesquisa)grdCli.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
                     txtPesquisa.Text = aPesquisaAlterada.TituloPesquisa;
-                    txtBioma.Text = aPesquisaAlterada.Bioma;
+                    cbBioma.Text = aPesquisaAlterada.Bioma;
                     dtpPesquisa.Value = aPesquisaAlterada.Dataa;
                     
                 }
@@ -128,7 +128,7 @@ namespace Library.PNI
                         _Controle.Excluir(aPesquisa);
                         LimpaControles();
                         CarregaGrid();
-                        txtBioma.Focus();
+                        cbBioma.Focus();
                     }
 
                 }

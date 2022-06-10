@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisa));
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.lblPesquisa = new System.Windows.Forms.Label();
-            this.txtBioma = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
             this.lblBioma = new System.Windows.Forms.Label();
             this.grdCli = new System.Windows.Forms.DataGridView();
@@ -44,6 +43,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.ilPesquisa = new System.Windows.Forms.ImageList(this.components);
             this.dtpPesquisa = new System.Windows.Forms.DateTimePicker();
+            this.cbBioma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,13 +62,6 @@
             this.lblPesquisa.Size = new System.Drawing.Size(105, 15);
             this.lblPesquisa.TabIndex = 17;
             this.lblPesquisa.Text = "Título da pesquisa:";
-            // 
-            // txtBioma
-            // 
-            this.txtBioma.Location = new System.Drawing.Point(121, 50);
-            this.txtBioma.Name = "txtBioma";
-            this.txtBioma.Size = new System.Drawing.Size(200, 23);
-            this.txtBioma.TabIndex = 18;
             // 
             // lblData
             // 
@@ -162,15 +155,31 @@
             this.dtpPesquisa.Size = new System.Drawing.Size(205, 23);
             this.dtpPesquisa.TabIndex = 24;
             // 
+            // cbBioma
+            // 
+            this.cbBioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBioma.FormattingEnabled = true;
+            this.cbBioma.Items.AddRange(new object[] {
+            "Amazônia",
+            "Cerrado",
+            "Pantanal",
+            "Mata Atlântica",
+            "Caatinga",
+            "Pamba"});
+            this.cbBioma.Location = new System.Drawing.Point(121, 50);
+            this.cbBioma.Name = "cbBioma";
+            this.cbBioma.Size = new System.Drawing.Size(200, 23);
+            this.cbBioma.TabIndex = 26;
+            // 
             // frmPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbBioma);
             this.Controls.Add(this.dtpPesquisa);
             this.Controls.Add(this.grdCli);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.txtBioma);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblBioma);
             this.Controls.Add(this.txtPesquisa);
@@ -189,7 +198,6 @@
 
         private TextBox txtPesquisa;
         private Label lblPesquisa;
-        private TextBox txtBioma;
         private Label lblData;
         private Label lblBioma;
         private DataGridView grdCli;
@@ -201,5 +209,6 @@
         private DataGridViewButtonColumn btnExcluir;
         private ImageList ilPesquisa;
         private DateTimePicker dtpPesquisa;
+        private ComboBox cbBioma;
     }
 }

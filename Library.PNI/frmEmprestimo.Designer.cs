@@ -45,6 +45,7 @@
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.dtpEmprestimo = new System.Windows.Forms.DateTimePicker();
+            this.cbEmprestimo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmp1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +167,7 @@
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(95, 61);
+            this.txtIdCliente.Location = new System.Drawing.Point(595, 101);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(205, 23);
             this.txtIdCliente.TabIndex = 14;
@@ -185,11 +186,22 @@
             this.dtpEmprestimo.Size = new System.Drawing.Size(205, 23);
             this.dtpEmprestimo.TabIndex = 12;
             // 
+            // cbEmprestimo
+            // 
+            this.cbEmprestimo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmprestimo.FormattingEnabled = true;
+            this.cbEmprestimo.Location = new System.Drawing.Point(95, 58);
+            this.cbEmprestimo.Name = "cbEmprestimo";
+            this.cbEmprestimo.Size = new System.Drawing.Size(205, 23);
+            this.cbEmprestimo.TabIndex = 24;
+            this.cbEmprestimo.SelectedIndexChanged += new System.EventHandler(this.cbEmprestimo_SelectedIndexChanged);
+            // 
             // frmEmprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbEmprestimo);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.grdEmp1);
             this.Controls.Add(this.pboxCapa);
@@ -231,5 +243,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
+        private ComboBox cbEmprestimo;
     }
 }

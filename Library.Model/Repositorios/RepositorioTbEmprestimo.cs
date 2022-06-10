@@ -24,6 +24,7 @@ namespace Library.Model.Repositorios
             db = _db;
             RecebeuContexto = true;
         }
+
         public void Incluir(TbEmprestimo oEmprestimo1) // Método "Incluir"
         {
             db.TbEmprestimo.Add(oEmprestimo1);
@@ -55,12 +56,12 @@ namespace Library.Model.Repositorios
         {//aqui
             return db.TbEmprestimo.ToList();
         }
+        
 
         public List<TbEmprestimo> SelecionarTodosScontexto()
         {
             return (from p in db.TbEmprestimo select p).AsNoTracking().ToList();
         }
-
         public void Dispose()
         {
             if (!RecebeuContexto)

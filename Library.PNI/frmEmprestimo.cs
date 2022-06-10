@@ -23,6 +23,8 @@ namespace Library.PNI
             InitializeComponent();
         }
 
+       
+
         private void CarregaGrid()
         {
             grdEmp1.AutoGenerateColumns = false;
@@ -117,5 +119,16 @@ namespace Library.PNI
                 }
             }
         }
+
+        private void cbEmprestimo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+
     }
 }
