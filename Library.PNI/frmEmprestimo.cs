@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library.Model;
 using Library.PNI.Controladora;
+using Microsoft.Data.SqlClient;
 
 namespace Library.PNI
 {
@@ -34,7 +35,23 @@ namespace Library.PNI
         private void frmEmprestimo1_Load(object sender, EventArgs e)
         {
             CarregaGrid();
+            //CarregarCategoria();
         }
+
+        //----------------------------------------------------
+        //private void CarregarCategoria()
+        //{
+        //    SqlCommand cm = new SqlCommand("Select Nome from TbCliente");
+        //    SqlDataReader LeitorNome = cm.ExecuteReader();
+        //    DataTable tabelaNome = new DataTable();
+        //    tabelaNome.Load(LeitorNome);
+        //    DataRow Linha = tabelaNome.NewRow();
+        //    tabelaNome.Rows.InsertAt(Linha, 0);
+        //    cbEmprestimo.DataSource = tabelaNome;
+        //    cbEmprestimo.ValueMember = "Id";
+        //    cbEmprestimo.DisplayMember = "Nome";
+
+        //}
 
         private bool ValidaControles()
         {
@@ -44,10 +61,10 @@ namespace Library.PNI
                 txtIdLivro.Focus();
                 return false;
             }
-            else if (txtIdCliente.Text.Trim() == "")
+            else if (cbEmprestimo.Text.Trim() == "")
             {
                 MessageBox.Show("Preencha o Conteúdo do campo Autor.", Application.ProductName, MessageBoxButtons.OK);
-                txtIdCliente.Focus();
+                cbEmprestimo.Focus();
                 return false;
             }            
             return true;
@@ -61,7 +78,7 @@ namespace Library.PNI
                     TbEmprestimo oEmprestimo1 = new TbEmprestimo(); // instancia                   
 
                     oEmprestimo1.Objeto = txtIdLivro.Text;
-                    oEmprestimo1.Cliente = txtIdCliente.Text;
+                    oEmprestimo1.Cliente = cbEmprestimo.Text;
                     oEmprestimo1.DataEmprestimo = dtpEmprestimo.Value;
                     oEmprestimo1.DataDevolucao = dtpDevolucao.Value;
                     _Controle.Incluir(oEmprestimo1);
@@ -69,7 +86,7 @@ namespace Library.PNI
                 else
                 {//Alteração
                     oEmprestimo1Alterado.Objeto = txtIdLivro.Text;
-                    oEmprestimo1Alterado.Cliente = txtIdCliente.Text;
+                    oEmprestimo1Alterado.Cliente = cbEmprestimo.Text;
                     oEmprestimo1Alterado.DataEmprestimo = dtpEmprestimo.Value;
                     oEmprestimo1Alterado.DataDevolucao = dtpDevolucao.Value;
                     _Controle.Alterar(oEmprestimo1Alterado);
@@ -88,7 +105,7 @@ namespace Library.PNI
         private void LimpaControles()
         {
             txtIdLivro.Text = "";
-            txtIdCliente.Text = "";            
+            cbEmprestimo.Text = "";            
             oEmprestimo1Alterado = null;
             Alterar = false;
         }
@@ -102,7 +119,7 @@ namespace Library.PNI
                     oEmprestimo1Alterado = (TbEmprestimo)grdEmp1.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
                     txtIdLivro.Text = oEmprestimo1Alterado.Objeto;
-                    txtIdCliente.Text = oEmprestimo1Alterado.Cliente;
+                    cbEmprestimo.Text = oEmprestimo1Alterado.Cliente;
                     
                 }
                 else if (grdEmp1.Columns[e.ColumnIndex].Name == "btnExcluir")

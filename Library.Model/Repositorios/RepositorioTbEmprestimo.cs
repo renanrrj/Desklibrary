@@ -53,7 +53,7 @@ namespace Library.Model.Repositorios
         }
 
         public List<TbEmprestimo> SelecionarTodos()
-        {//aqui
+        {
             return db.TbEmprestimo.ToList();
         }
         

@@ -49,9 +49,9 @@ namespace Library.Model.Repositorios
         {
             return db.TbCliente.Find(nome);
         }
-        public TbCliente SelecionarScontexto(string Nome)
+        public TbCliente SelecionarScontexto(int id)
         {
-            return (from d in db.TbCliente where d.Nome == Nome select d).AsNoTracking().FirstOrDefault();
+            return (from d in db.TbCliente where d.Id == id select d).AsNoTracking().FirstOrDefault();
         }
         public List<TbCliente> SelecionarTodos()
         {

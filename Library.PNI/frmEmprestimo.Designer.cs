@@ -42,7 +42,6 @@
             this.lblClienteEmp = new System.Windows.Forms.Label();
             this.lblLivroEmp = new System.Windows.Forms.Label();
             this.txtIdLivro = new System.Windows.Forms.TextBox();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.dtpEmprestimo = new System.Windows.Forms.DateTimePicker();
             this.cbEmprestimo = new System.Windows.Forms.ComboBox();
@@ -165,13 +164,6 @@
             this.txtIdLivro.Size = new System.Drawing.Size(205, 23);
             this.txtIdLivro.TabIndex = 15;
             // 
-            // txtIdCliente
-            // 
-            this.txtIdCliente.Location = new System.Drawing.Point(595, 101);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.Size = new System.Drawing.Size(205, 23);
-            this.txtIdCliente.TabIndex = 14;
-            // 
             // dtpDevolucao
             // 
             this.dtpDevolucao.Location = new System.Drawing.Point(95, 139);
@@ -210,7 +202,6 @@
             this.Controls.Add(this.lblClienteEmp);
             this.Controls.Add(this.lblLivroEmp);
             this.Controls.Add(this.txtIdLivro);
-            this.Controls.Add(this.txtIdCliente);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.dtpEmprestimo);
             this.Name = "frmEmprestimo";
@@ -234,7 +225,6 @@
         private Label lblClienteEmp;
         private Label lblLivroEmp;
         private TextBox txtIdLivro;
-        private TextBox txtIdCliente;
         private DateTimePicker dtpDevolucao;
         private DateTimePicker dtpEmprestimo;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
