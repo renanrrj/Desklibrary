@@ -35,23 +35,18 @@ namespace Library.PNI
         private void frmEmprestimo1_Load(object sender, EventArgs e)
         {
             CarregaGrid();
-            //CarregarCategoria();
+            CarregaCombo();
+        }
+
+        private void CarregaCombo()
+        {
+            cbEmprestimo.ValueMember = "Id";
+            cbEmprestimo.DisplayMember = "Nome";
+            cbEmprestimo.DataSource = _Controle.SelecionarTodosClientes();
         }
 
         //----------------------------------------------------
-        //private void CarregarCategoria()
-        //{
-        //    SqlCommand cm = new SqlCommand("Select Nome from TbCliente");
-        //    SqlDataReader LeitorNome = cm.ExecuteReader();
-        //    DataTable tabelaNome = new DataTable();
-        //    tabelaNome.Load(LeitorNome);
-        //    DataRow Linha = tabelaNome.NewRow();
-        //    tabelaNome.Rows.InsertAt(Linha, 0);
-        //    cbEmprestimo.DataSource = tabelaNome;
-        //    cbEmprestimo.ValueMember = "Id";
-        //    cbEmprestimo.DisplayMember = "Nome";
-
-        //}
+        
 
         private bool ValidaControles()
         {

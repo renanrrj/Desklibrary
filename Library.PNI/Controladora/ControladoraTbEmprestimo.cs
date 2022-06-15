@@ -34,6 +34,10 @@ namespace Library.PNI.Controladora
             return _Repositorio.SelecionarTodos();
         }
 
+        public List<TbCliente> SelecionarTodosClientes()
+        {
+            return _Repositorio.SelecionarTodosScCliente();
+        }
         public void Dispose()
         {
             _Repositorio.Dispose();

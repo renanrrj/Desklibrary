@@ -62,6 +62,11 @@ namespace Library.Model.Repositorios
         {
             return (from p in db.TbEmprestimo select p).AsNoTracking().ToList();
         }
+
+        public List<TbCliente> SelecionarTodosScCliente()
+        {
+            return (from p in db.TbCliente select p).AsNoTracking().ToList();
+        }
         public void Dispose()
         {
             if (!RecebeuContexto)
