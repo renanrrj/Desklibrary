@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,7 +66,33 @@ namespace Library.PNI
             {
                 if (Alterar == false)
                 {
-                    TbLivro oLivro = new TbLivro(); // instancia                    
+                    TbLivro oLivro = new TbLivro(); // instancia
+
+
+                    Bitmap imagem = (Bitmap)pboxLivro.Image;
+                    //var stream = new MemoryStream();
+
+                    string base64String = string.Empty;
+
+
+                    MemoryStream memoryStream = new MemoryStream();
+                    bmp.Save(memoryStream, ImageFormat.Png);
+
+
+                    memoryStream.Position = 0;
+                    byte[] byteBuffer = memoryStream.ToArray();
+
+
+                    memoryStream.Close();
+
+
+                    base64String = Convert.ToBase64String(byteBuffer);
+                    byteBuffer = null;
+
+                    String ImagemConvertida = base64String;
+
+
+
 
                     oLivro.Titulo = txtTitulo.Text;
                     oLivro.Autor = txtAutor.Text;
@@ -144,5 +171,9 @@ namespace Library.PNI
                 }
          
         }
+
+        
+
+
     }
 }
