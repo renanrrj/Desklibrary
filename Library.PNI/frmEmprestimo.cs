@@ -13,8 +13,12 @@ using Microsoft.Data.SqlClient;
 
 namespace Library.PNI
 {
+   
     public partial class frmEmprestimo : Form
     {
+
+        Bitmap bmp;
+
         private ControladoraEmprestimo _Controle = new ControladoraEmprestimo();
         private bool Alterar = false;
         private TbEmprestimo oEmprestimo1Alterado = null;
@@ -43,6 +47,7 @@ namespace Library.PNI
             cbEmprestimo.ValueMember = "Id";
             cbEmprestimo.DisplayMember = "Nome";
             cbEmprestimo.DataSource = _Controle.SelecionarTodosClientes();
+           // cbEmprestimo.DataSource = _Controle.SelecionarTodos();
         }
 
         //----------------------------------------------------
@@ -50,10 +55,10 @@ namespace Library.PNI
 
         private bool ValidaControles()
         {
-            if (txtIdLivro.Text.Trim() == "")
+            if (txtObjeto.Text.Trim() == "")
             {
                 MessageBox.Show("Preencha o Conteúdo do campo Título.", Application.ProductName, MessageBoxButtons.OK);
-                txtIdLivro.Focus();
+                txtObjeto.Focus();
                 return false;
             }
             else if (cbEmprestimo.Text.Trim() == "")
@@ -72,7 +77,7 @@ namespace Library.PNI
                 {
                     TbEmprestimo oEmprestimo1 = new TbEmprestimo(); // instancia                   
 
-                    oEmprestimo1.Objeto = txtIdLivro.Text;
+                    oEmprestimo1.Objeto = txtObjeto.Text;
                     oEmprestimo1.Cliente = cbEmprestimo.Text;
                     oEmprestimo1.DataEmprestimo = dtpEmprestimo.Value;
                     oEmprestimo1.DataDevolucao = dtpDevolucao.Value;
@@ -80,7 +85,7 @@ namespace Library.PNI
                 }
                 else
                 {//Alteração
-                    oEmprestimo1Alterado.Objeto = txtIdLivro.Text;
+                    oEmprestimo1Alterado.Objeto = txtObjeto.Text;
                     oEmprestimo1Alterado.Cliente = cbEmprestimo.Text;
                     oEmprestimo1Alterado.DataEmprestimo = dtpEmprestimo.Value;
                     oEmprestimo1Alterado.DataDevolucao = dtpDevolucao.Value;
@@ -88,7 +93,7 @@ namespace Library.PNI
                 }
                 LimpaControles();
                 CarregaGrid();
-                txtIdLivro.Focus();
+                txtObjeto.Focus();
             }
 
         }
@@ -99,7 +104,7 @@ namespace Library.PNI
         }
         private void LimpaControles()
         {
-            txtIdLivro.Text = "";
+            txtObjeto.Text = "";
             cbEmprestimo.Text = "";            
             oEmprestimo1Alterado = null;
             Alterar = false;
@@ -113,7 +118,7 @@ namespace Library.PNI
                 {
                     oEmprestimo1Alterado = (TbEmprestimo)grdEmp1.Rows[e.RowIndex].DataBoundItem;
                     Alterar = true;
-                    txtIdLivro.Text = oEmprestimo1Alterado.Objeto;
+                    txtObjeto.Text = oEmprestimo1Alterado.Objeto;
                     cbEmprestimo.Text = oEmprestimo1Alterado.Cliente;
                     
                 }
@@ -125,7 +130,7 @@ namespace Library.PNI
                         _Controle.Excluir(oEmprestimo);
                         LimpaControles();
                         CarregaGrid();
-                        txtIdLivro.Focus();
+                        txtObjeto.Focus();
                     }
 
                 }
@@ -135,6 +140,52 @@ namespace Library.PNI
         private void cbEmprestimo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCarregarImg_Click(object sender, EventArgs e)
+        {
+            ofdEmprestimo.Title = "Selecionar foto";
+            ofdEmprestimo.Filter = "PNG |*.png| JPG|*.jpg";
+
+            if (ofdEmprestimo.ShowDialog() == DialogResult.OK)
+            {
+                string imgnome = ofdEmprestimo.FileName;
+                bmp = new Bitmap(imgnome);
+                pboxEmprestimo.Image = bmp;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            if (ValidaControles())
+            {
+                if (Alterar == false)
+                {
+                    TbEmprestimo oEmprestimo1 = new TbEmprestimo(); // instancia                   
+
+                    oEmprestimo1.Objeto = txtObjeto.Text;
+                    oEmprestimo1.Cliente = cbEmprestimo.Text;
+                    oEmprestimo1.DataEmprestimo = dtpEmprestimo.Value;
+                    oEmprestimo1.DataDevolucao = dtpDevolucao.Value;
+                    _Controle.Incluir(oEmprestimo1);
+                }
+                else
+                {//Alteração
+                    oEmprestimo1Alterado.Objeto = txtObjeto.Text;
+                    oEmprestimo1Alterado.Cliente = cbEmprestimo.Text;
+                    oEmprestimo1Alterado.DataEmprestimo = dtpEmprestimo.Value;
+                    oEmprestimo1Alterado.DataDevolucao = dtpDevolucao.Value;
+                    _Controle.Alterar(oEmprestimo1Alterado);
+                }
+                LimpaControles();
+                CarregaGrid();
+                txtObjeto.Focus();
+            }
         }
         //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         //{

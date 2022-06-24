@@ -42,7 +42,11 @@
             this.lblData = new System.Windows.Forms.Label();
             this.txtLocal = new System.Windows.Forms.TextBox();
             this.lblLocal = new System.Windows.Forms.Label();
+            this.pboxMapa = new System.Windows.Forms.PictureBox();
+            this.btnCarregarImg = new System.Windows.Forms.Button();
+            this.ofdMapa = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxMapa)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpData
@@ -65,7 +69,7 @@
             this.grdCli.Location = new System.Drawing.Point(0, 251);
             this.grdCli.Name = "grdCli";
             this.grdCli.RowTemplate.Height = 25;
-            this.grdCli.Size = new System.Drawing.Size(800, 199);
+            this.grdCli.Size = new System.Drawing.Size(546, 199);
             this.grdCli.TabIndex = 31;
             this.grdCli.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCli_CellClick);
             // 
@@ -104,7 +108,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ImageIndex = 1;
             this.btnSalvar.ImageList = this.ilMapa;
-            this.btnSalvar.Location = new System.Drawing.Point(121, 137);
+            this.btnSalvar.Location = new System.Drawing.Point(196, 137);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(36, 36);
@@ -145,11 +149,39 @@
             this.lblLocal.TabIndex = 26;
             this.lblLocal.Text = "Local:";
             // 
+            // pboxMapa
+            // 
+            this.pboxMapa.Location = new System.Drawing.Point(328, 24);
+            this.pboxMapa.Name = "pboxMapa";
+            this.pboxMapa.Size = new System.Drawing.Size(162, 182);
+            this.pboxMapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxMapa.TabIndex = 33;
+            this.pboxMapa.TabStop = false;
+            // 
+            // btnCarregarImg
+            // 
+            this.btnCarregarImg.FlatAppearance.BorderSize = 0;
+            this.btnCarregarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarregarImg.ImageIndex = 0;
+            this.btnCarregarImg.ImageList = this.ilMapa;
+            this.btnCarregarImg.Location = new System.Drawing.Point(117, 132);
+            this.btnCarregarImg.Name = "btnCarregarImg";
+            this.btnCarregarImg.Size = new System.Drawing.Size(40, 41);
+            this.btnCarregarImg.TabIndex = 34;
+            this.btnCarregarImg.UseVisualStyleBackColor = true;
+            this.btnCarregarImg.Click += new System.EventHandler(this.btnCarregarImg_Click);
+            // 
+            // ofdMapa
+            // 
+            this.ofdMapa.FileName = "openFileDialog1";
+            // 
             // frmMapa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(546, 450);
+            this.Controls.Add(this.btnCarregarImg);
+            this.Controls.Add(this.pboxMapa);
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.grdCli);
             this.Controls.Add(this.btnSalvar);
@@ -161,6 +193,7 @@
             this.Activated += new System.EventHandler(this.frmMapa_Activated);
             this.Load += new System.EventHandler(this.frmMapa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxMapa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +213,8 @@
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
         private ImageList ilMapa;
+        private PictureBox pboxMapa;
+        private Button btnCarregarImg;
+        private OpenFileDialog ofdMapa;
     }
 }

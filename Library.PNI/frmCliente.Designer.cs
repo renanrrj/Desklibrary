@@ -51,7 +51,10 @@
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblBairro = new System.Windows.Forms.Label();
             this.ofdCliente = new System.Windows.Forms.OpenFileDialog();
+            this.btnCarregarImg = new System.Windows.Forms.Button();
+            this.pboxCliente = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -61,7 +64,7 @@
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ImageIndex = 0;
             this.btnSalvar.ImageList = this.ilCliente;
-            this.btnSalvar.Location = new System.Drawing.Point(161, 176);
+            this.btnSalvar.Location = new System.Drawing.Point(117, 181);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(36, 36);
@@ -75,6 +78,7 @@
             this.ilCliente.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilCliente.ImageStream")));
             this.ilCliente.TransparentColor = System.Drawing.Color.Transparent;
             this.ilCliente.Images.SetKeyName(0, "salve-.png");
+            this.ilCliente.Images.SetKeyName(1, "adicionar-imagem.png");
             // 
             // txtEndereco
             // 
@@ -219,11 +223,35 @@
             // 
             this.ofdCliente.FileName = "openFileDialog1";
             // 
+            // btnCarregarImg
+            // 
+            this.btnCarregarImg.FlatAppearance.BorderSize = 0;
+            this.btnCarregarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarregarImg.ImageIndex = 1;
+            this.btnCarregarImg.ImageList = this.ilCliente;
+            this.btnCarregarImg.Location = new System.Drawing.Point(184, 176);
+            this.btnCarregarImg.Name = "btnCarregarImg";
+            this.btnCarregarImg.Size = new System.Drawing.Size(40, 41);
+            this.btnCarregarImg.TabIndex = 19;
+            this.btnCarregarImg.UseVisualStyleBackColor = true;
+            this.btnCarregarImg.Click += new System.EventHandler(this.btnCarregarImg_Click);
+            // 
+            // pboxCliente
+            // 
+            this.pboxCliente.Location = new System.Drawing.Point(403, 33);
+            this.pboxCliente.Name = "pboxCliente";
+            this.pboxCliente.Size = new System.Drawing.Size(151, 172);
+            this.pboxCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxCliente.TabIndex = 20;
+            this.pboxCliente.TabStop = false;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 450);
+            this.Controls.Add(this.pboxCliente);
+            this.Controls.Add(this.btnCarregarImg);
             this.Controls.Add(this.grdCli);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtBairro);
@@ -243,6 +271,7 @@
             this.Activated += new System.EventHandler(this.frmCliente_Activated);
             this.Load += new System.EventHandler(this.frmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCli)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +300,7 @@
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
         private ImageList ilCliente;
+        private Button btnCarregarImg;
+        private PictureBox pboxCliente;
     }
 }

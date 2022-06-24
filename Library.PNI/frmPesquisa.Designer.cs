@@ -94,7 +94,7 @@
             this.grdCli.Location = new System.Drawing.Point(0, 251);
             this.grdCli.Name = "grdCli";
             this.grdCli.RowTemplate.Height = 25;
-            this.grdCli.Size = new System.Drawing.Size(800, 199);
+            this.grdCli.Size = new System.Drawing.Size(544, 199);
             this.grdCli.TabIndex = 23;
             this.grdCli.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCli_CellClick);
             // 
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(544, 450);
             this.Controls.Add(this.cbBioma);
             this.Controls.Add(this.dtpPesquisa);
             this.Controls.Add(this.grdCli);

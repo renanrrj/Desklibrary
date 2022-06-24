@@ -14,6 +14,7 @@ namespace Library.PNI
 {
     public partial class frmMapa : Form
     {
+        Bitmap bmp;
 
         private ControladoraTbMapa _Controle = new ControladoraTbMapa();
         private bool Alterar = false;
@@ -121,6 +122,19 @@ namespace Library.PNI
                     }
 
                 }
+            }
+        }
+
+        private void btnCarregarImg_Click(object sender, EventArgs e)
+        {
+            ofdMapa.Title = "Selecionar foto";
+            ofdMapa.Filter = "PNG |*.png| JPG|*.jpg";
+
+            if (ofdMapa.ShowDialog() == DialogResult.OK)
+            {
+                string imgnome = ofdMapa.FileName;
+                bmp = new Bitmap(imgnome);
+                pboxMapa.Image = bmp;
             }
         }
     }

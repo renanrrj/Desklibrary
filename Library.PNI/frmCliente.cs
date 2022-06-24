@@ -14,7 +14,7 @@ namespace Library.PNI
 {
     public partial class frmCliente : Form
     {
-        //Bitmap bmp;
+        Bitmap bmp;
 
         private ControladoraTbCliente _Controle = new ControladoraTbCliente();
         private bool Alterar = false;
@@ -147,6 +147,19 @@ namespace Library.PNI
                 }
             }
 
+        }
+
+        private void btnCarregarImg_Click(object sender, EventArgs e)
+        {
+            ofdCliente.Title = "Selecionar foto";
+            ofdCliente.Filter = "PNG |*.png| JPG|*.jpg";
+
+            if (ofdCliente.ShowDialog() == DialogResult.OK)
+            {
+                string imgnome = ofdCliente.FileName;
+                bmp = new Bitmap(imgnome);
+                pboxCliente.Image = bmp;
+            }
         }
     }
 }

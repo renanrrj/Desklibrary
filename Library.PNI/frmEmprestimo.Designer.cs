@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmprestimo));
             this.grdEmp1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,28 +37,22 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlterar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnExcluir = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pboxCapa = new System.Windows.Forms.PictureBox();
+            this.pboxEmprestimo = new System.Windows.Forms.PictureBox();
             this.lblDevolucao = new System.Windows.Forms.Label();
             this.lblEmprestimo = new System.Windows.Forms.Label();
             this.lblClienteEmp = new System.Windows.Forms.Label();
-            this.lblLivroEmp = new System.Windows.Forms.Label();
-            this.txtIdLivro = new System.Windows.Forms.TextBox();
+            this.lblObjeto = new System.Windows.Forms.Label();
+            this.txtObjeto = new System.Windows.Forms.TextBox();
             this.dtpDevolucao = new System.Windows.Forms.DateTimePicker();
             this.dtpEmprestimo = new System.Windows.Forms.DateTimePicker();
             this.cbEmprestimo = new System.Windows.Forms.ComboBox();
+            this.btnCarregarImg = new System.Windows.Forms.Button();
+            this.ilEmprestimo = new System.Windows.Forms.ImageList(this.components);
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.ofdEmprestimo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmp1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxEmprestimo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(160, 184);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 22;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // grdEmp1
             // 
@@ -73,13 +68,13 @@
             this.grdEmp1.Location = new System.Drawing.Point(0, 251);
             this.grdEmp1.Name = "grdEmp1";
             this.grdEmp1.RowTemplate.Height = 25;
-            this.grdEmp1.Size = new System.Drawing.Size(800, 199);
+            this.grdEmp1.Size = new System.Drawing.Size(642, 199);
             this.grdEmp1.TabIndex = 21;
             this.grdEmp1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEmp1_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Livro";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Objeto";
             this.dataGridViewTextBoxColumn1.HeaderText = "Livro";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
@@ -111,15 +106,15 @@
             this.btnExcluir.HeaderText = "Excluir";
             this.btnExcluir.Name = "btnExcluir";
             // 
-            // pboxCapa
+            // pboxEmprestimo
             // 
-            this.pboxCapa.Image = global::Library.PNI.Properties.Resources.jpg__Logo_;
-            this.pboxCapa.Location = new System.Drawing.Point(396, 6);
-            this.pboxCapa.Name = "pboxCapa";
-            this.pboxCapa.Size = new System.Drawing.Size(156, 201);
-            this.pboxCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxCapa.TabIndex = 20;
-            this.pboxCapa.TabStop = false;
+            this.pboxEmprestimo.Image = global::Library.PNI.Properties.Resources.jpg__Logo_;
+            this.pboxEmprestimo.Location = new System.Drawing.Point(396, 6);
+            this.pboxEmprestimo.Name = "pboxEmprestimo";
+            this.pboxEmprestimo.Size = new System.Drawing.Size(156, 201);
+            this.pboxEmprestimo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxEmprestimo.TabIndex = 20;
+            this.pboxEmprestimo.TabStop = false;
             // 
             // lblDevolucao
             // 
@@ -148,21 +143,21 @@
             this.lblClienteEmp.TabIndex = 18;
             this.lblClienteEmp.Text = "Cliente:";
             // 
-            // lblLivroEmp
+            // lblObjeto
             // 
-            this.lblLivroEmp.AutoSize = true;
-            this.lblLivroEmp.Location = new System.Drawing.Point(53, 21);
-            this.lblLivroEmp.Name = "lblLivroEmp";
-            this.lblLivroEmp.Size = new System.Drawing.Size(36, 15);
-            this.lblLivroEmp.TabIndex = 19;
-            this.lblLivroEmp.Text = "Livro:";
+            this.lblObjeto.AutoSize = true;
+            this.lblObjeto.Location = new System.Drawing.Point(42, 21);
+            this.lblObjeto.Name = "lblObjeto";
+            this.lblObjeto.Size = new System.Drawing.Size(46, 15);
+            this.lblObjeto.TabIndex = 19;
+            this.lblObjeto.Text = "Objeto:";
             // 
-            // txtIdLivro
+            // txtObjeto
             // 
-            this.txtIdLivro.Location = new System.Drawing.Point(95, 21);
-            this.txtIdLivro.Name = "txtIdLivro";
-            this.txtIdLivro.Size = new System.Drawing.Size(205, 23);
-            this.txtIdLivro.TabIndex = 15;
+            this.txtObjeto.Location = new System.Drawing.Point(95, 21);
+            this.txtObjeto.Name = "txtObjeto";
+            this.txtObjeto.Size = new System.Drawing.Size(205, 23);
+            this.txtObjeto.TabIndex = 15;
             // 
             // dtpDevolucao
             // 
@@ -188,20 +183,61 @@
             this.cbEmprestimo.TabIndex = 24;
             this.cbEmprestimo.SelectedIndexChanged += new System.EventHandler(this.cbEmprestimo_SelectedIndexChanged);
             // 
+            // btnCarregarImg
+            // 
+            this.btnCarregarImg.FlatAppearance.BorderSize = 0;
+            this.btnCarregarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarregarImg.ImageIndex = 0;
+            this.btnCarregarImg.ImageList = this.ilEmprestimo;
+            this.btnCarregarImg.Location = new System.Drawing.Point(126, 168);
+            this.btnCarregarImg.Name = "btnCarregarImg";
+            this.btnCarregarImg.Size = new System.Drawing.Size(40, 41);
+            this.btnCarregarImg.TabIndex = 36;
+            this.btnCarregarImg.UseVisualStyleBackColor = true;
+            this.btnCarregarImg.Click += new System.EventHandler(this.btnCarregarImg_Click);
+            // 
+            // ilEmprestimo
+            // 
+            this.ilEmprestimo.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ilEmprestimo.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilEmprestimo.ImageStream")));
+            this.ilEmprestimo.TransparentColor = System.Drawing.Color.Transparent;
+            this.ilEmprestimo.Images.SetKeyName(0, "adicionar-imagem.png");
+            this.ilEmprestimo.Images.SetKeyName(1, "salve-.png");
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.ImageIndex = 1;
+            this.btnSalvar.ImageList = this.ilEmprestimo;
+            this.btnSalvar.Location = new System.Drawing.Point(205, 173);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(36, 36);
+            this.btnSalvar.TabIndex = 35;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            // 
+            // ofdEmprestimo
+            // 
+            this.ofdEmprestimo.FileName = "openFileDialog1";
+            // 
             // frmEmprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cbEmprestimo);
+            this.ClientSize = new System.Drawing.Size(642, 450);
+            this.Controls.Add(this.btnCarregarImg);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.cbEmprestimo);
             this.Controls.Add(this.grdEmp1);
-            this.Controls.Add(this.pboxCapa);
+            this.Controls.Add(this.pboxEmprestimo);
             this.Controls.Add(this.lblDevolucao);
             this.Controls.Add(this.lblEmprestimo);
             this.Controls.Add(this.lblClienteEmp);
-            this.Controls.Add(this.lblLivroEmp);
-            this.Controls.Add(this.txtIdLivro);
+            this.Controls.Add(this.lblObjeto);
+            this.Controls.Add(this.txtObjeto);
             this.Controls.Add(this.dtpDevolucao);
             this.Controls.Add(this.dtpEmprestimo);
             this.Name = "frmEmprestimo";
@@ -209,30 +245,32 @@
             this.Activated += new System.EventHandler(this.frmEmprestimo1_Activated);
             this.Load += new System.EventHandler(this.frmEmprestimo1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdEmp1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCapa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxEmprestimo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button btnSalvar;
         private DataGridView grdEmp1;
-        private PictureBox pboxCapa;
+        private PictureBox pboxEmprestimo;
         private Label lblDevolucao;
         private Label lblEmprestimo;
         private Label lblClienteEmp;
-        private Label lblLivroEmp;
-        private TextBox txtIdLivro;
+        private Label lblObjeto;
+        private TextBox txtObjeto;
         private DateTimePicker dtpDevolucao;
         private DateTimePicker dtpEmprestimo;
+        private ComboBox cbEmprestimo;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewButtonColumn btnAlterar;
         private DataGridViewButtonColumn btnExcluir;
-        private ComboBox cbEmprestimo;
+        private Button btnCarregarImg;
+        private Button btnSalvar;
+        private ImageList ilEmprestimo;
+        private OpenFileDialog ofdEmprestimo;
     }
 }

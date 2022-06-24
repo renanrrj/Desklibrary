@@ -69,27 +69,27 @@ namespace Library.PNI
                     TbLivro oLivro = new TbLivro(); // instancia
 
 
-                    Bitmap imagem = (Bitmap)pboxLivro.Image;
+                    //Bitmap imagem = (Bitmap)pboxLivro.Image;
                     //var stream = new MemoryStream();
 
-                    string base64String = string.Empty;
+                    //string base64String = string.Empty;
 
 
-                    MemoryStream memoryStream = new MemoryStream();
-                    bmp.Save(memoryStream, ImageFormat.Png);
+                    //MemoryStream memoryStream = new MemoryStream();
+                    //bmp.Save(memoryStream, ImageFormat.Png);
 
 
-                    memoryStream.Position = 0;
-                    byte[] byteBuffer = memoryStream.ToArray();
+                    //memoryStream.Position = 0;
+                    //byte[] byteBuffer = memoryStream.ToArray();
 
 
-                    memoryStream.Close();
+                    //memoryStream.Close();
 
 
-                    base64String = Convert.ToBase64String(byteBuffer);
-                    byteBuffer = null;
+                    //base64String = Convert.ToBase64String(byteBuffer);
+                    //byteBuffer = null;
 
-                    String ImagemConvertida = base64String;
+                    //String ImagemConvertida = base64String;
 
 
 
